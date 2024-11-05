@@ -48,20 +48,6 @@ def evaluate_jokes(jokes):
         evaluations[model] = completion.choices[0].message.content
     return evaluations
 
-# Main function to run the comedy show
-def run_comedy_show(num_themes):
-    themes = generate_themes(num_themes)
-    
-    for i, theme in enumerate(themes, 1):
-        print(f"\nRound {i} - Theme: {theme}")
-        jokes = generate_jokes(theme)
-        evaluations = evaluate_jokes(jokes)
-        
-        for model in competing_models:
-            print(f"\n{model}:")
-            print(f"Joke: {jokes[model]}")
-            print(f"Evaluation: {evaluations[model]}")
-
 # Run the show
 def run_comedy_show(num_themes):
     print("\n=== AI Comedy Show ===\n")
